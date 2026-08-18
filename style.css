@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Vazirmatn, sans-serif;
+    direction:rtl;
+    color:white;
+    min-height:100vh;
+    background:
+    linear-gradient(135deg,#06283d,#1363df,#159895);
+    overflow-x:hidden;
+}
+
+/* نور متحرک پس زمینه */
+body::before{
+    content:"";
+    position:fixed;
+    width:450px;
+    height:450px;
+    background:#00fff0;
+    opacity:.15;
+    border-radius:50%;
+    filter:blur(100px);
+    animation:moveGlow 10s infinite alternate;
+    z-index:-1;
+}
+
+@keyframes moveGlow{
+    from{
+        transform:translate(-100px,-100px);
+    }
+    to{
+        transform:translate(350px,300px);
+    }
+}
+
+
+header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+header h1{
+    font-size:45px;
+    margin:0;
+    animation:fadeDown 1s;
+}
+
+header p{
+    opacity:.8;
+}
+
+
+.container{
+    width:90%;
+    max-width:900px;
+    margin:auto;
+}
+
+
+.card{
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.2);
+    backdrop-filter:blur(12px);
+
+    padding:25px;
+    border-radius:25px;
+    margin:25px 0;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.2);
+
+    opacity:0;
+    transform:translateY(50px);
+    transition:.7s;
+}
+
+
+.card.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+.card:hover{
+    transform:scale(1.03);
+}
+
+
+.card h2{
+    margin-top:0;
+}
+
+
+.score{
+    font-size:32px;
+    color:#ffe66d;
+}
+
+
+.city{
+    color:#bdefff;
+}
+
+
+footer{
+    text-align:center;
+    padding:40px;
+    opacity:.7;
+}
+
+
+@keyframes fadeDown{
+    from{
+        opacity:0;
+        transform:translateY(-40px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+}
+
+
+/* موبایل */
+@media(max-width:600px){
+
+header h1{
+    font-size:32px;
+}
+
+.card{
+    padding:20px;
+}
+
+}
