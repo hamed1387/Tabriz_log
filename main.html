@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>Tabriz Places</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Vazirmatn, sans-serif;
+    background:
+    linear-gradient(135deg,#06283d,#1363df,#159895);
+    color:white;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+/* پس زمینه متحرک */
+body::before{
+    content:"";
+    position:fixed;
+    width:400px;
+    height:400px;
+    background:#00ffff;
+    opacity:.15;
+    border-radius:50%;
+    filter:blur(80px);
+    animation:move 8s infinite alternate;
+}
+
+@keyframes move{
+    from{transform:translate(-100px,-50px)}
+    to{transform:translate(300px,200px)}
+}
+
+header{
+    text-align:center;
+    padding:40px 20px;
+}
+
+header h1{
+    font-size:40px;
+}
+
+header p{
+    opacity:.8;
+}
+
+
+.container{
+    max-width:900px;
+    margin:auto;
+    padding:20px;
+}
+
+
+.card{
+    background:rgba(255,255,255,.12);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:25px;
+    padding:25px;
+    margin:25px 0;
+
+    transform:translateY(40px);
+    opacity:0;
+    animation:show .8s forwards;
+}
+
+
+.card:nth-child(2){
+    animation-delay:.2s;
+}
+
+.card:nth-child(3){
+    animation-delay:.4s;
+}
+
+
+@keyframes show{
+    to{
+        transform:none;
+        opacity:1;
+    }
+}
+
+
+.score{
+    font-size:30px;
+    color:#ffe66d;
+}
+
+
+.city{
+    font-size:18px;
+    color:#d8f3ff;
+}
+
+
+footer{
+    text-align:center;
+    padding:30px;
+    opacity:.7;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>🌉 Tabriz Places</h1>
+<p>کافه‌ها و مکان‌هایی که تجربه کردیم</p>
+</header>
+
+
+<div class="container">
+
+
+<div class="card">
+<h2>☕ کافه X</h2>
+<div class="score">⭐ 8.5</div>
+<p class="city">📍 تبریز</p>
+<p>امتیاز کلی: عالی، محیط خوب و تجربه لذت‌بخش</p>
+</div>
+
+
+<div class="card">
+<h2>☕ کافه مهران</h2>
+<div class="score">⭐ 8</div>
+<p class="city">📍 تبریز</p>
+<p>کافه‌ای با فضای آرام و مناسب دورهمی</p>
+</div>
+
+
+<div class="card">
+<h2>☕ کافه فرد</h2>
+<div class="score">⭐ 6</div>
+<p class="city">📍 تبریز</p>
+<p>تجربه معمولی، جای بهتر برای بعضی موقعیت‌ها</p>
+</div>
+
+
+</div>
+
+
+<footer>
+ساخته شده برای ثبت خاطرات تبریز ❤️
+</footer>
+
+</body>
+</html>
